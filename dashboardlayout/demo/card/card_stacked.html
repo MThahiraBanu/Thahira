@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link href="../../styles/material.css" rel="stylesheet" />
+    <link href="http://npmci.syncfusion.com/packages/development/ej2-buttons/styles/material.css" rel="stylesheet" />
+
+    <style>
+        .e-card-header-image {
+            background: url("code.png");
+        }
+
+        .e-card-image {
+            background: url("sample.jpg")
+        }
+
+        .e-card-image1 {
+            background: url("sample1.jpg");
+        }
+
+        .e-card .e-card-btn .e-home:before {
+            content: '\e7d9'
+        }
+
+        .e-card .e-card-btn .e-warning:before {
+            content: '\e992'
+        }
+
+        .topleft {
+            top: 0;
+            bottom: auto !important;
+        }
+
+        .topright {
+            top: 0;
+            text-align: right;
+            bottom: auto !important;
+        }
+
+        .bottomright {
+            bottom: 0;
+            right: 0;
+            text-align: right;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="e-container" style="width: 350px; margin: auto;padding: 50px;" id="card">
+        <div tabindex="0" class="e-card e-card-horizontal">
+            <img src="code1.png" alt="Sample">
+            <div class="e-card-stacked">
+                <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                        <div class="e-card-header-title"> Lorem ipsum dolor,</div>
+                        <div class="e-card-sub-title">Sub text</div>
+                    </div>
+                </div>
+                <div class="e-card-separator"></div>
+                <div class="e-card-actions">
+                    <button class="e-card-btn">
+                        <span class="e-icons e-home"></span>
+                    </button>
+                    <button class="e-card-btn">
+                        <span class="e-icons e-warning"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

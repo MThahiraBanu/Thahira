@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link href="../../styles/material.css" rel="stylesheet" />
+
+    <style>
+        .e-card-header-image {
+            background: url("code.png");
+        }
+
+        .e-card-header-image.e-back-image {
+            background: url("john.png");
+        }
+
+        .e-card-image {
+            background: url("sample.jpg")
+        }
+
+        .e-card-header-image.e-weather {
+            background-image: url("weather.png")
+        }
+
+        .e-card-image1 {
+            background: url("sample1.jpg");
+        }
+
+        .e-card.e-flip .e-card-header.e-front,
+        .e-card.e-flip .e-card-header.e-back {
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            transition: all 1s ease-in-out;
+            border-radius: 6px;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .e-card.e-flip .e-card-header.e-front {
+            transform: rotateX(0);
+        }
+
+        .e-card.e-flip .e-card-header.e-back {
+            transform: rotateX(180deg);
+        }
+
+        .e-card.e-flip:hover .e-card-header.e-front {
+            transform: rotateX(180deg);
+        }
+
+        .e-card.e-flip:hover .e-card-header.e-back {
+            transform: rotateX(0);
+        }
+
+        .e-card .e-expand:before {
+            content: "\e7e7";
+        }
+
+        .e-card .e-collapse:before {
+            content: "\e916";
+        }
+
+        .e-card .e-home:before {
+            content: "\e902";
+        }
+
+        .e-card #card_reveal {
+            display: none;
+        }
+
+        .e-card .e-reveal-show {
+            display: block !important;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .e-card .e-reveal-hide {
+            display: none !important;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .e-card-horizontal.day-whether .e-card-header {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body class="e-bigger">
+
+    <tr>
+        <td>
+            <button id="btn_mouse" class="e-btn">Desktop</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="btn_touch" class="e-btn">Mobile</button>
+        </td>
+    </tr>
+
+    <div class="e-container" style="position: relative;width: 500px;">
+        <div class="sample" style="margin-top: 20px">
+            <div class="e-card" style="text-align:center">
+                <div id="card_revealed">
+                    <div class="e-card-header">
+                        <div class="e-card-header-image e-card-corner"></div>
+                    </div>
+                    <div class="e-card-header">
+                        <div class="e-card-header-caption">
+                            <div class="e-card-header-title"> Dr. Jacob John, M.D</div>
+                            <div class="e-card-sub-title">Child specialist</div>
+                        </div>
+                    </div>
+                    <div id="card_reveal_icon">
+                        <span class="e-icons e-expand"></span>
+                    </div>
+                </div>
+                <div id="card_reveal">
+                    <div id="card-reveal_collapse">
+                        <span class="e-icons e-collapse"></span>
+                    </div>
+                    <div class="e-card-content">
+                        In short, I spend my earthly time striving to create some darned awesome UI designs, and also develop a few.
+                    </div>
+                    <div class="e-card-content">
+                        Find me on
+                    </div>
+                    <div>
+                        <span class="e-icons e-home"></span>
+                        <span class="e-icons e-home"></span>
+                        <span class="e-icons e-home"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sample" style="margin-top: 20px">
+            <div class="e-card e-flip">
+                <div class="e-card-header e-front">
+                    <div class="e-card-header-caption">
+                        <div class="e-card-header-title"> Dr. Elizabath, M.D</div>
+                        <div class="e-card-sub-title">Child specialist</div>
+                    </div>
+                    <div class="e-card-header-image e-card-corner"></div>
+                </div>
+                <div class="e-card-header e-back">
+                    <div class="e-card-header-caption">
+                        <div class="e-card-header-title"> Dr. Jacob John, M.D</div>
+                        <div class="e-card-sub-title">Child specialist</div>
+                    </div>
+                    <div class="e-card-header-image e-back-image e-card-corner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="sample" style="margin-top: 20px; width: 350px;background-image: url(snow.jpg);padding:10px">
+            <div class="e-card" style="text-align: center; opacity: 0.8">
+                <div class="e-card-horizontal">
+                    <div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-image e-weather"></div>
+                        </div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-caption">
+                                <div class="e-card-sub-title"> H: 24&#x2103;  L: 70 &#x2103;</div>
+                            </div>
+                        </div>
+                        <div class="e-card-title">Amsterdan</div>
+                    </div>
+                    <div class="e-card-stacked" style="background-color: rgba(0, 0, 0, 0.60)">
+                        <div id="card_info" style="text-align: right">
+                            <span class="e-icons e-expand"></span>
+                        </div>
+                        <div class="e-card-title">25&#x2103;</div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-caption">
+                                <div class="e-card-sub-title">Updated 10:35AM</div>
+                            </div>
+                        </div>
+                        <div class="e-card-title">Amsterdan</div>
+                        <div class="e-card-horizontal" style="background-color:orange">
+                            <div class="e-card-content">15%</div>
+                            <div class="e-card-content">10km/h</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="e-card-horizontal day-whether">
+                    <div class="e-card-stacked">
+                        <div class="e-card-header">
+                            <div class="e-card-header-caption">
+                                <div class="e-card-sub-title">Mon</div>
+                            </div>
+                        </div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-image e-card-corner e-weather"></div>
+                        </div>
+                        <div class="e-card-title">20&#x2103;</div>
+                    </div>
+                    <div class="e-card-stacked">
+                        <div class="e-card-header">
+                            <div class="e-card-header-caption">
+                                <div class="e-card-sub-title">Tue</div>
+                            </div>
+                        </div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-image e-card-corner e-weather"></div>
+                        </div>
+                        <div class="e-card-title">30&#x2103;</div>
+                    </div>
+                    <div class="e-card-stacked">
+                        <div class="e-card-header">
+                            <div class="e-card-header-caption">
+                                <div class="e-card-sub-title">Tue</div>
+                            </div>
+                        </div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-image e-card-corner e-weather"></div>
+                        </div>
+                        <div class="e-card-title">30&#x2103;</div>
+                    </div>
+                    <div class="e-card-stacked">
+                        <div class="e-card-header">
+                            <div class="e-card-header-caption">
+                                <div class="e-card-sub-title">Tue</div>
+                            </div>
+                        </div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-image e-card-corner e-weather"></div>
+                        </div>
+                        <div class="e-card-title">30&#x2103;</div>
+                    </div>
+                    <div class="e-card-stacked">
+                        <div class="e-card-header">
+                            <div class="e-card-header-caption">
+                                <div class="e-card-sub-title">Tue</div>
+                            </div>
+                        </div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-image e-card-corner e-weather"></div>
+                        </div>
+                        <div class="e-card-title">30&#x2103;</div>
+                    </div>
+                    <div class="e-card-stacked">
+                        <div class="e-card-header">
+                            <div class="e-card-header-caption">
+                                <div class="e-card-sub-title">Tue</div>
+                            </div>
+                        </div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-image e-card-corner e-weather"></div>
+                        </div>
+                        <div class="e-card-title">30&#x2103;</div>
+                    </div>
+                    <div class="e-card-stacked">
+                        <div class="e-card-header">
+                            <div class="e-card-header-caption">
+                                <div class="e-card-sub-title">Tue</div>
+                            </div>
+                        </div>
+                        <div class="e-card-header">
+                            <div class="e-card-header-image e-card-corner e-weather"></div>
+                        </div>
+                        <div class="e-card-title">30&#x2103;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("btn_touch").onclick = function (e) {
+        document.getElementsByTagName("body")[0].classList.add("e-bigger");
+    };
+    document.getElementById("btn_mouse").onclick = function (e) {
+        document.getElementsByClassName("e-bigger")[0].classList.remove("e-bigger");
+    };
+    document.getElementById("card_reveal_icon").onclick = function (e) {
+        var cardEle = e.currentTarget.parentNode.parentNode;
+        var revealEle = cardEle.querySelector("#card_reveal");
+        revealEle.classList.add("e-reveal-show");
+        revealEle.classList.remove("e-reveal-hide");
+        var revealedEle = cardEle.querySelector("#card_revealed");
+        revealedEle.classList.add("e-reveal-hide");
+        revealedEle.classList.remove("e-reveal-show");
+    };
+    document.getElementById("card-reveal_collapse").onclick = function (e) {
+        var cardEle = e.currentTarget.parentNode.parentNode;
+        var revealEle = cardEle.querySelector("#card_reveal");
+        revealEle.classList.add("e-reveal-hide");
+        revealEle.classList.remove("e-reveal-show");
+        var revealedEle = cardEle.querySelector("#card_revealed");
+        revealedEle.classList.add("e-reveal-show");
+        revealedEle.classList.remove("e-reveal-hide");
+    };
+</script>
+
+</html>

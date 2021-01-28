@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Splitter-Feature Matrix </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Typescript UI Controls" />
+    <meta name="author" content="Syncfusion" />
+    <link rel="stylesheet" href='../../node_modules/@syncfusion/ej2-base/styles/material.css'/>
+    <link rel="stylesheet" href='../../node_modules/@syncfusion/ej2-icons/styles/material.css'/>
+    <link href="../../styles/splitter/material.css" rel="stylesheet" />
+    <script src="../../node_modules/requirejs/require.js" data-main="feature-matrix"></script>
+    <script>
+        require.config({
+            packages: [{
+                name: '@syncfusion/ej2-base',
+                location: '../../node_modules/@syncfusion/ej2-base/dist',
+                main: 'ej2-base.umd.min.js'
+            }
+            ]
+        });
+    </script>
+</head>
+<style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: relative;
+            margin: 0px;
+            font-size: 14px;
+            line-height: 1.42857143;
+        }
+        #dialogTarget {
+            height: 280px;
+            border-bottom: 1px solid brown;
+        }
+        .action-section {
+            margin: 10px;
+            float: right;
+            height: auto;
+            overflow: auto;
+            width: 44%;
+            padding: 5px;
+            border: 1px solid brown;
+        }
+        #Events {
+            margin: 0 0 10px 10px;
+            overflow: auto;
+            display: block;
+            height: 208px;
+        }
+        .control-section {
+            display: inline-block;
+            height: 600px;
+            margin: 10px;
+            width: 51%;
+            border: 1px solid brown;
+        }
+        .action-section .e-btn {
+            margin: 15px;
+            height: 33px;
+            text-transform: none;
+        }
+        #eventargs {
+            margin: 5px;
+            border: 1px dashed grey;
+            display: block;
+            min-height: 30px;
+            width: 95%;
+            padding-left: 5px;
+        }
+        span {
+            font-weight: bold;
+        }
+        #values input[type=number]::-webkit-inner-spin-button,
+        #values input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .feature-matrix-splitter {
+            max-width: 610px;
+            margin: 25px auto;
+        }
+        .h3 {
+            font-size: 14px;
+        }
+        .content {
+            padding: 8px;
+        }
+        #heading {
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="heading">Splitter Feature-Matrix</div>
+    <div class="control-section" id="ModelTarget" style="height: 515px">
+        <div id="dialogTarget" style="position: relative">
+            <div class="feature-matrix-splitter">
+                <div id="splitter" ></div>
+            </div>
+        </div>
+        <div id="Events">
+            <div id="eventarg"> Events...<br>
+                <div style="float: right">
+                    <button id="clear" class="e-control e-btn">Clear</button>
+                </div>
+                <span id="eventargs"></span>
+            </div>
+        </div>
+    </div>
+    <div class="action-section">
+        <span>Methods:</span> 
+        <div>            
+            <button id="refresh" class="e-control e-btn">Refresh</button>
+            
+            <button id="destroy" class="e-control e-btn" >Destroy</button>
+
+            <button id="addPane" class="e-control e-btn">Add pane</button>
+
+            <button id="removePane" class="e-control e-btn">Remove pane</button>
+        </div>
+        <span>Properties:</span>
+            <div>    
+                <button id="rtl" class="e-control e-btn">Enable RTL</button>
+                
+                <button id="enabled" class="e-control e-btn">Disable</button>
+            </div>
+            <div style="margin-top: 10px">
+                <span style="margin: 0 25px 0 0"> Height:</span>
+                <input type="text" id="height" name="height" />
+                <span style="margin: 0 14px"> Width:</span>
+                <input type="text" id="width" name="width"/>
+            </div>
+            <div style="margin-top: 25px">
+                <span style="margin: 0 -45px 0 0"> cssClass:</span>
+                <span style="margin-left: 61px">
+                <input id="cssclass" type="text"/>
+                <span style="margin: 0 15px"> Separator size:</span>
+                <input type="text" id="separator" name="separator"/>
+                </span>
+            </div>
+            <div style="display: inline-flex">
+                <div id="positionchange" style="margin-top: 20px">
+                    <span> Orientation:</span>
+                    <span style="margin-left: 10px">
+                        <select id="orientation" style="padding: 5px 20px;" >
+                            <option value="Horizontal" >Horizontal</option>
+                            <option value="Vertical">Vertical</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div style="margin-top: 10px;">
+                <table>
+                    <div style="font-size: 15px; font-weight: bold;"> Pane settings:</div>
+                    <tr>
+                        <td class="td-title"> <span style="margin: 0 25px 0 0"> Pane index:</span> </td>
+                        <td class="td-title"> <input type="text" id="index" name="height" /></td>
+                        <td class="td-title"> <span style="margin: 0 25px 0 0"> Pane size:</span> </td>
+                        <td class="td-title"> <input type="text" id="size" name="height" /></td>
+                    </tr>
+                    <tr>
+                        <td class="td-title"> <span> Min:</span> </td>
+                        <td class="td-title"> <input type="text" id="min" name="width"/></td>
+                        <td class="td-title"> <span> Max:</span> </td>
+                        <td class="td-title"> <input type="text" id="max" name="width"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td-title"> <span> Content:</span> </td>
+                        <td class="td-title"> <textarea id="content" style="width: 186px; height: 28px;"></textarea></td>
+                        <td><button id="resize" class="e-control e-btn">Disable resize</button></td>
+                        <td><button id="contentOk" class="e-control e-btn">Ok</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
