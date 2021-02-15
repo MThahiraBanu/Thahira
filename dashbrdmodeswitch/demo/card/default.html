@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link href="../../styles/material.css" rel="stylesheet" />
+    <link href="http://npmci.syncfusion.com/packages/development/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <script data-main="default" src="../../node_modules/requirejs/require.js"></script>
+    <script>
+        require.config({
+            packages: [{
+                name: '@syncfusion/ej2-base',
+                location: '../../node_modules/@syncfusion/ej2-base',
+                main: 'index.js'
+            }]
+        });
+    </script>
+
+    <style>
+        #card_sample_stacked .e-card {
+            height: 10px;
+            min-height: auto;
+            opacity: 0.4;
+            background: blue;
+            transition: .3s ease;
+        }
+
+        #card_sample_stacked .e-card.e-card-active {
+            height: auto;
+            min-height: 50px;
+            opacity: 1;
+        }
+
+        #fan_structure .e-card,
+        #flipStructure .e-card {
+            text-align: center;
+            transition: all 750ms;
+            width: 200px;
+            height: 400px;
+            position: absolute;
+            transform: rotate(0deg);
+        }
+
+        #fan_structure,
+        #multi_task,
+        #flipStructure {
+            height: 500px;
+            margin-top: 30px;
+        }
+
+        #fan_structure.e-card-fan .e-card:hover {
+            transform: scale(1.25) rotate(0deg) rotatex(-3deg) translate(-10px, -5px) !important;
+            z-index: 1;
+        }
+
+        .e-card-header-image {
+            background: url("code.png");
+        }
+
+        #multi_task {
+            position: relative;
+        }
+
+        #multi_task .e-card {
+            position: absolute;
+        }
+
+        #multi_task .e-card {
+            width: 200px;
+            height: 300px;
+            text-align: center;
+            transition: all 200ms;
+            touch-action: none;
+        }
+
+        #multi_task .e-card.e-card-active {
+            z-index: 10;
+        }
+
+        .card-out {
+            animation: card-out 0.6s cubic-bezier(.8, .2, .1, 0.8);
+            transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            z-index: 1;
+        }
+
+        @keyframes card-out {
+            0% {
+                z-index: 20;
+                transform: translateY(0px) rotate(-4deg);
+            }
+            50% {
+                transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+            }
+            80% {
+                z-index: 1;
+            }
+            100% {
+                transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <tr>
+        <td>
+            <button id="btn_mouse" class="e-btn">Desktop</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="btn_touch" class="e-btn">Mobile</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="btn_boot" class="e-btn">Bootstrap</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="btn_fabric" class="e-btn">Fabric</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="btn_material" class="e-btn">Material</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="btn_high" class="e-btn">HighContrast</button>
+        </td>
+    </tr>
+
+    <div class="e-container" style="width: 550px">
+        <table style="width: 100%; table-layout: fixed;" cellspacing="10">
+            <tr>
+                <td style="width: 250px"> Card Stacked with Animation </td>
+                <td style="position: relative">
+                    <div class="card_sample_stacked" id="card_sample_stacked">
+                        <div tabindex="0" class="e-card" onclick="stackedCardClick(this)">
+                            <div class="e-card-header">
+                                <div class="e-card-header-image e-card-corner"></div>
+                                <div class="e-card-header-caption">
+                                    <div class="e-card-header-title"> Dr. Jacob John, M.D</div>
+                                    <div class="e-card-sub-title">Child specialist</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div tabindex="0" class="e-card" onclick="stackedCardClick(this)">
+                            <div class="e-card-header">
+                                <div class="e-card-header-image e-card-corner"></div>
+                                <div class="e-card-header-caption">
+                                    <div class="e-card-header-title"> Dr. Jacob John, M.D</div>
+                                    <div class="e-card-sub-title">Child specialist</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div tabindex="0" class="e-card e-card-active" onclick="stackedCardClick(this)">
+                            <div class="e-card-header">
+                                <div class="e-card-header-image e-card-corner"></div>
+                                <div class="e-card-header-caption">
+                                    <div class="e-card-header-title"> Dr. Jacob John, M.D</div>
+                                    <div class="e-card-sub-title">Child specialist</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="e-btn" onclick="formFanStructure(this)">Form fan_structure</button>
+                </td>
+                <td>
+                    <div id="fan_structure">
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title"> Card 1 </div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 2</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 3</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 4</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 5</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 6</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 7</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="e-btn" id="multiTaskBtn">Multi Tasking</button>
+                    <button class="e-btn" id="singleTaskBtn">Normal</button>
+                    <p>
+                        <li>Swipe Left and Right for card removing</li>
+                        <li>Touch card for selection.</li>
+                        <li>Card drag direction (Left, right and down)</li>
+                    </p>
+                </td>
+                <td>
+                    <div id="multi_task">
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title"> Card 1 </div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 2</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 3</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 4</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 5</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 6</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 7</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="e-btn" id="formFlipStructure">Form fan with flip structure</button>
+                </td>
+                <td>
+                    <div id="flipStructure">
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title"> Card 1 </div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 2</div>
+                        </div>
+                        <div tabindex="0" class="e-card">
+                            <div class="e-card-title">Card 3</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    (function () {
+        document.getElementsByTagName('link')[0].href = '../../styles/highcontrast.css';
+    })();
+
+
+    function multiTask(e) {
+        var root = document.getElementById("multi_task");
+        var MultiTask_Ele = document.querySelectorAll('#multi_task .e-card');
+        var topRatio = 30;
+        var len = MultiTask_Ele.length;
+        var temp = topRatio;
+        for (var i = 0; i < len; i++) {
+            MultiTask_Ele[i].style.top = temp + 'px';
+            temp += topRatio;
+        }
+        root.classList.add('e-multi-task');
+    }
+
+    function formFanStructure(e) {
+        var fanStructute_card = document.querySelectorAll('#fan_structure .e-card');
+        document.getElementById("fan_structure").classList.add('e-card-fan');
+        var len = fanStructute_card.length;
+        transformRatio = 8;
+        var temp;
+        var divide = (parseInt(len / 2));
+        temp = transformRatio;
+        for (var i = divide - 1; i >= 0; i--) {
+            fanStructute_card[i].style.transform = 'rotate(' + (-temp) + 'deg)';
+            temp += transformRatio;
+        }
+        transformRatio = 8;
+        temp = transformRatio;
+        for (var i = divide + 1; i < len; i++) {
+            fanStructute_card[i].style.transform = 'rotate(' + (temp) + 'deg)';
+            temp += transformRatio;
+        }
+    }
+
+    function stackedCardClick(e) {
+        if (e.classList.contains('e-card-active')) {
+            e.style.removeProperty('height');
+            return;
+        } else {
+            var ele = e.parentElement.querySelector(".e-card-active");
+            ele.style.removeProperty('height');
+            e.style.height = ele.offsetHeight + 'px';
+            e.classList.add('e-card-active');
+            ele.classList.remove('e-card-active');
+        }
+    }
+    document.getElementById('btn_touch').onclick = function (e) {
+        document.getElementsByTagName('body')[0].classList.add('e-bigger');
+    };
+    document.getElementById('btn_mouse').onclick = function (e) {
+        document.getElementsByClassName('e-bigger')[0].classList.remove('e-bigger');
+    };
+    document.getElementById('btn_boot').onclick = function (e) {
+        document.getElementsByTagName('link')[0].href = '../../styles/bootstrap.css';
+    };
+    document.getElementById('btn_fabric').onclick = function (e) {
+        document.getElementsByTagName('link')[0].href = '../../styles/fabric.css';
+    };
+    document.getElementById('btn_material').onclick = function (e) {
+        document.getElementsByTagName('link')[0].href = '../../styles/material.css';
+    };
+    document.getElementById('btn_high').onclick = function (e) {
+        document.getElementsByTagName('link')[0].href = '../../styles/highcontrast.css';
+    };
+</script>
+
+</html>
