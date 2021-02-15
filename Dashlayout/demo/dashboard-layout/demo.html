@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link href="../../node_modules/@syncfusion/ej2-base/styles/material.css" rel="stylesheet" />
+    <link href="../../styles/dashboard-layout/material.css" rel="stylesheet" />
+    <script data-main="demo" src="../../node_modules/requirejs/require.js"></script>
+    <script>
+        require.config({
+            packages: [{
+                name: '@syncfusion/ej2-base',
+                location: '../../node_modules/@syncfusion/ej2-base/dist/',
+                main: 'ej2-base.umd.min.js'
+            }]
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="portlet_default">
+        </div>
+    </div>
+    <div id="properties">
+        <table>
+            <tr>
+                <td>
+                    Row
+                </td>
+                <td class='sample'>
+                    <input class='sample' id='row' type="number" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Columns
+                </td>
+                <td class='sample'>
+                    <input class='sample' id='column' type="number" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SizeX
+                </td>
+                <td class='sample'>
+                    <input class='sample' id='sizeX' type="number" value="1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SizeY
+                </td>
+                <td class='sample'>
+                    <input class='sample' id='sizeY' type="number" value="1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="add">Add</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button id="RemoveAll">RemoveAll</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:20px">
+                    ID
+                    <input id='resizeId' value="layout_0">
+                </td>
+            </tr>
+            <tr>
+                <td style="width:20px">
+                    X
+                    <input id='resizeX' type="number" value="1">
+                </td>
+            </tr>
+            <tr>
+                <td style="width:20px">
+                    Y
+                    <input id='resizeY' type="number" value="1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="resize">Resizepanel</button>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:20px">
+                    ID
+                    <input id='moveID' value="layout_0">
+                </td>
+
+
+            </tr>
+            <tr>
+                <td style="width:20px">
+                    Column
+                    <input id='moveX' type="number" value="1">
+                </td>
+            </tr>
+            <tr>
+                <td style="width:20px">
+                    Row
+                    <input id='moveY' type="number" value="1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="move">movePanel</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+<style>
+    #container {
+        width: 1000px;
+        display: inline-block;
+        position: absolute;
+        border: 1px black solid;
+    }
+
+    #properties {
+        width: 20%;
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        border: 1px black solid;
+    }
+
+   .sample{
+       width: 30px !important;
+   }
+</style>
+
+</html>
