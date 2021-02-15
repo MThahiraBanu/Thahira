@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link href="../../node_modules/@syncfusion/ej2-base/styles/material.css" rel="stylesheet" />
+    <link href="../../styles/dashboard-layout/material.css" rel="stylesheet" />
+    <script data-main="default" src="../../node_modules/requirejs/require.js"></script>
+    <script>
+        require.config({
+            packages: [{
+                name: '@syncfusion/ej2-base',
+                location: '../../node_modules/@syncfusion/ej2-base/dist/',
+                main: 'ej2-base.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-buttons',
+                location: '../../node_modules/@syncfusion/ej2-buttons/dist/',
+                main: 'ej2-buttons.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-maps',
+                location: '../../node_modules/@syncfusion/ej2-maps/dist/',
+                main: 'ej2-maps.umd.min.js'
+            },
+           
+            {
+                name: '@syncfusion/ej2-popups',
+                location: '../../node_modules/@syncfusion/ej2-popups/dist/',
+                main: 'ej2-popups.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-charts',
+                location: '../../node_modules/@syncfusion/ej2-charts/dist/',
+                main: 'ej2-charts.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-data',
+                location: '../../node_modules/@syncfusion/ej2-data/dist/',
+                main: 'ej2-data.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-splitbuttons',
+                location: '../../node_modules/@syncfusion/ej2-splitbuttons/dist/',
+                main: 'ej2-splitbuttons.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-svg-base',
+                location: '../../node_modules/@syncfusion/ej2-svg-base/dist/',
+                main: 'ej2-svg-base.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-navigations',
+                location: '../../node_modules/@syncfusion/ej2-navigations/dist/',
+                main: 'ej2-navigations.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-compression',
+                location: '../../node_modules/@syncfusion/ej2-compression/dist/',
+                main: 'ej2-compression.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-lists',
+                location: '../../node_modules/@syncfusion/ej2-lists/dist/',
+                main: 'ej2-lists.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-inputs',
+                location: '../../node_modules/@syncfusion/ej2-inputs/dist/',
+                main: 'ej2-inputs.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-file-utils',
+                location: '../../node_modules/@syncfusion/ej2-file-utils/dist/',
+                main: 'ej2-file-utils.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-pdf-export',
+                location: '../../node_modules/@syncfusion/ej2-pdf-export/dist/',
+                main: 'ej2-pdf-export.umd.min.js'
+            },
+            {
+                name: '@syncfusion/ej2-dropdowns',
+                location: '../../node_modules/@syncfusion/ej2-dropdowns/dist/',
+                main: 'ej2-dropdowns.umd.min.js'
+            },]
+        });
+    </script>
+ 
+</head>
+
+
+<body>
+    <div class="check" style="height: 340px;">
+        <div class="control-section" style="height: 400px;overflow:auto;">
+          <!-- <div>How to best read this user guide
+            The best way to get started would be to read the “Getting Started” section of the documentation for the component that you would like to start using first. The “Getting Started” guide gives just enough information that you need to know before starting to write code. This is the only section that we recommend reading end-to-end before starting to write code, all other information can be referred as needed.
+            Now that you are familiar with the basics of using the component, the next step would be to start integrating the component into your application. A good starting point would be to refer to the code snippets in the online sample browser which contains hundreds of code samples, it is very likely that you will find a code sample that resembles your intended usage scenario.
+            Another valuable resource is the API reference which provides detailed information on the object hierarchy as well as the settings available on every object.</div>
+          <div>How to best read this user guide
+            The best way to get started would be to read the “Getting Started” section of the documentation for the component that you would like to start using first. The “Getting Started” guide gives just enough information that you need to know before starting to write code. This is the only section that we recommend reading end-to-end before starting to write code, all other information can be referred as needed.
+            Now that you are familiar with the basics of using the component, the next step would be to start integrating the component into your application. A good starting point would be to refer to the code snippets in the online sample browser which contains hundreds of code samples, it is very likely that you will find a code sample that resembles your intended usage scenario.
+            Another valuable resource is the API reference which provides detailed information on the object hierarchy as well as the settings available on every object.</div>
+          <div>How to best read this user guide
+            The best way to get started would be to read the “Getting Started” section of the documentation for the component that you would like to start using first. The “Getting Started” guide gives just enough information that you need to know before starting to write code. This is the only section that we recommend reading end-to-end before starting to write code, all other information can be referred as needed.
+            Now that you are familiar with the basics of using the component, the next step would be to start integrating the component into your application. A good starting point would be to refer to the code snippets in the online sample browser which contains hundreds of code samples, it is very likely that you will find a code sample that resembles your intended usage scenario.
+            Another valuable resource is the API reference which provides detailed information on the object hierarchy as well as the settings available on every object.</div>
+          <div>How to best read this user guide
+            The best way to get started would be to read the “Getting Started” section of the documentation for the component that you would like to start using first. The “Getting Started” guide gives just enough information that you need to know before starting to write code. This is the only section that we recommend reading end-to-end before starting to write code, all other information can be referred as needed.
+            Now that you are familiar with the basics of using the component, the next step would be to start integrating the component into your application. A good starting point would be to refer to the code snippets in the online sample browser which contains hundreds of code samples, it is very likely that you will find a code sample that resembles your intended usage scenario.
+            Another valuable resource is the API reference which provides detailed information on the object hierarchy as well as the settings available on every object.</div>
+          <div>How to best read this user guide
+            The best way to get started would be to read the “Getting Started” section of the documentation for the component that you would like to start using first. The “Getting Started” guide gives just enough information that you need to know before starting to write code. This is the only section that we recommend reading end-to-end before starting to write code, all other information can be referred as needed.
+            Now that you are familiar with the basics of using the component, the next step would be to start integrating the component into your application. A good starting point would be to refer to the code snippets in the online sample browser which contains hundreds of code samples, it is very likely that you will find a code sample that resembles your intended usage scenario.
+            Another valuable resource is the API reference which provides detailed information on the object hierarchy as well as the settings available on every object.</div>
+          <div>How to best read this user guide
+            The best way to get started would be to read the “Getting Started” section of the documentation for the component that you would like to start using first. The “Getting Started” guide gives just enough information that you need to know before starting to write code. This is the only section that we recommend reading end-to-end before starting to write code, all other information can be referred as needed.
+            Now that you are familiar with the basics of using the component, the next step would be to start integrating the component into your application. A good starting point would be to refer to the code snippets in the online sample browser which contains hundreds of code samples, it is very likely that you will find a code sample that resembles your intended usage scenario.
+            Another valuable resource is the API reference which provides detailed information on the object hierarchy as well as the settings available on every object.</div>
+          <div>How to best read this user guide
+            The best way to get started would be to read the “Getting Started” section of the documentation for the component that you would like to start using first. The “Getting Started” guide gives just enough information that you need to know before starting to write code. This is the only section that we recommend reading end-to-end before starting to write code, all other information can be referred as needed.
+            Now that you are familiar with the basics of using the component, the next step would be to start integrating the component into your application. A good starting point would be to refer to the code snippets in the online sample browser which contains hundreds of code samples, it is very likely that you will find a code sample that resembles your intended usage scenario.
+            Another valuable resource is the API reference which provides detailed information on the object hierarchy as well as the settings available on every object.</div>
+          <div>How to best read this user guide
+            The best way to get started would be to read the “Getting Started” section of the documentation for the component that you would like to start using first. The “Getting Started” guide gives just enough information that you need to know before starting to write code. This is the only section that we recommend reading end-to-end before starting to write code, all other information can be referred as needed.
+            Now that you are familiar with the basics of using the component, the next step would be to start integrating the component into your application. A good starting point would be to refer to the code snippets in the online sample browser which contains hundreds of code samples, it is very likely that you will find a code sample that resembles your intended usage scenario.
+            Another valuable resource is the API reference which provides detailed information on the object hierarchy as well as the settings available on every object.</div>
+          -->
+            <div id="portlet_default"></div>
+        </div>
+</div>
+</body>
+
+</html>
+
+
+
